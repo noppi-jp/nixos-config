@@ -277,7 +277,7 @@
       "$terminal" = "wezterm";
       "$menu" = "wofi";
 
-      exec-once = [ "waybar" ];
+      #exec-once = [ "waybar" ];
 
       env = [
         "XCURSOR_SIZE,24"
