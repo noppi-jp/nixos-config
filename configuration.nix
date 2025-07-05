@@ -34,6 +34,7 @@
       emacs
       fastfetch
       file
+      hyprshot
       p7zip
       ripgrep
       wget
@@ -104,7 +105,6 @@
 
     hyprland = {
       enable = true;
-      xwayland.enable = true;
       withUWSM = true;
     };
 
