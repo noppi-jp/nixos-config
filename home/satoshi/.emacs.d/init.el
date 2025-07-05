@@ -105,11 +105,11 @@
 ;  :ensure t
 ;  :custom (geiser-chez-binary . "D:/tools/chez/bin/ta6nt/scheme.exe"))
 
-;(leaf font-setting
-;  :config
-;  (create-fontset-from-ascii-font "HackGen-11:weight=normal" nil "HackGen")
-;  (set-fontset-font "fontset-HackGen" 'unicode "HackGen-11:weight=normal" nil)
-;  (add-to-list 'default-frame-alist '(font . "fontset-HackGen")))
+(leaf font-setting
+  :config
+  (create-fontset-from-ascii-font "HackGen-11:weight=normal" nil "HackGen")
+  (set-fontset-font "fontset-HackGen" 'unicode "HackGen-11:weight=normal" nil)
+  (add-to-list 'default-frame-alist '(font . "fontset-HackGen")))
 
 (leaf ace-jump-mode
   :defvar ace-jump-mode-move-keys
