@@ -97,6 +97,12 @@
       };
     };
 
+    hyprland = {
+      enable = true;
+      xwayland.enable = true;
+      withUWSM = true;
+    };
+
     nano.enable = false;
 
     neovim = {
@@ -119,6 +125,8 @@
         set-option -sa terminal-features ",$TERM:RGB"
       '';
     };
+
+    uwsm.enable = true;
   };
 
   services = {
