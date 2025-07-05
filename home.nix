@@ -272,7 +272,10 @@
 
     wofi = {
       enable = true;
-      settings = { show = "run"; };
+      settings = {
+        show = "run";
+        run-show_all = false;
+      };
     };
   };
 
