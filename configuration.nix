@@ -40,7 +40,6 @@
       wget
       wezterm
       wofi
-      xorg.xcursorthemes
     ];
   };
 

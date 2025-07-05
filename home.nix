@@ -1,36 +1,44 @@
 { config, pkgs, ... }:
 
 {
-  home.username = "satoshi";
-  home.homeDirectory = "/home/satoshi";
+  home = {
+    username = "satoshi";
+    homeDirectory = "/home/satoshi";
 
-  # link the configuration file in current directory to the specified location in
-  # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
-  home.file.".emacs.d/init.el".source = ./home/satoshi/.emacs.d/init.el;
+    # link the configuration file in current directory to the specified location in
+    # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
+    file.".emacs.d/init.el".source = ./home/satoshi/.emacs.d/init.el;
 
-  # link all files in `./scripts` to `~/.config/i3/scripts`
-  # home.file.".config/i3/scripts" = {
-  #   source = ./scripts;
-  #   recursive = true;   # link recursively
-  #   executable = true;  # make all files executable
-  # };
+    # link all files in `./scripts` to `~/.config/i3/scripts`
+    # home.file.".config/i3/scripts" = {
+    #   source = ./scripts;
+    #   recursive = true;   # link recursively
+    #   executable = true;  # make all files executable
+    # };
 
-  # encode the file content in nix configuration file directly
-  # home.file.".xxx".text = ''
-  #     xxx
-  # '';
+    # encode the file content in nix configuration file directly
+    # home.file.".xxx".text = ''
+    #     xxx
+    # '';
 
-  # set cursor size and dpi for 4k monitor
-  # xresources.properties = {
-  #   "Xcursor.size" = 16;
-  #   "Xft.dpi" = 172;
-  # };
+    # set cursor size and dpi for 4k monitor
+    # xresources.properties = {
+    #   "Xcursor.size" = 16;
+    #   "Xft.dpi" = 172;
+    # };
 
-  # Packages that should be installed to the user profile.
-  home.packages = with pkgs; [
-    # here is some command line tools I use frequently
-    # feel free to add your own or remove some of them
-  ];
+    # Packages that should be installed to the user profile.
+    packages = with pkgs; [
+      # here is some command line tools I use frequently
+      # feel free to add your own or remove some of them
+    ];
+
+    pointerCursor = {
+      enable = true;
+      package = pkgs.xorg.xcursorthemes;
+      name = "whiteglass";
+    };
+  };
 
   # basic configuration of git, please change to your own
   programs = {
