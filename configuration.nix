@@ -37,6 +37,7 @@
       p7zip
       ripgrep
       wget
+      wofi
     ];
   };
 
