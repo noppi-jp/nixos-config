@@ -37,7 +37,7 @@
     bash = {
       enable = true;
       profileExtra = ''
-        if uwsm check may-start; then
+        if uwsm check may-start -q; then
             exec uwsm start hyprland-uwsm.desktop
         fi
       '';
@@ -171,7 +171,7 @@
         #tray,
         #mode,
         #scratchpad {
-            padding: 0 10@x;
+            padding: 0 10px;
             color: #ffffff;
         }
 
