@@ -54,12 +54,14 @@
     };
 
     packages = with pkgs; [
+      font-awesome
       hackgen-font
       nerd-fonts.symbols-only
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
       noto-fonts-color-emoji
+      roboto
     ];
   };
 
@@ -130,6 +132,8 @@
     };
 
     uwsm.enable = true;
+
+    waybar.enable = true;
   };
 
   services = {
