@@ -37,6 +37,7 @@
       p7zip
       ripgrep
       wget
+      wezterm
       wofi
     ];
   };
@@ -54,6 +55,7 @@
 
     packages = with pkgs; [
       hackgen-font
+      nerd-fonts.symbols-only
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
