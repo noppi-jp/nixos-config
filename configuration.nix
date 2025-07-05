@@ -40,6 +40,26 @@
     ];
   };
 
+  fonts = {
+    enableDefaultPackages = true;
+
+    fontconfig = {
+      defaultFonts = {
+        serif = [ "Noto Serif CJK JP" ];
+        sansSerif = [ "Noto Sans CJK JP" ];
+        monospace = [ "HackGen" ];
+      };
+    };
+
+    packages = with pkgs; [
+      hackgen-font
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      noto-fonts-color-emoji
+    ];
+  };
+
   # Select internationalisation properties.
   i18n.defaultLocale = "ja_JP.UTF-8";
 
