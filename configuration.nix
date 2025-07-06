@@ -28,6 +28,8 @@
   console.keyMap = "jp106";
 
   environment = {
+    sessionVariables.NIXOS_OZONE_WL = "1";
+
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     systemPackages = with pkgs; [
@@ -35,10 +37,12 @@
       emacs
       fastfetch
       file
+      google-chrome
       hyprshot
       p7zip
       ripgrep
       wget
+      wl-clipboard
       wezterm
       wofi
     ];
