@@ -66,8 +66,20 @@
     ];
   };
 
-  # Select internationalisation properties.
-  i18n.defaultLocale = "ja_JP.UTF-8";
+  i18n = {
+    # Select internationalisation properties.
+    defaultLocale = "ja_JP.UTF-8";
+
+    inputMethod = {
+      enable = true;
+      type = "fcitx5";
+      fcitx5.addons = with pkgs; [
+        fcitx5-skk
+        fcitx5-gtk
+        libsForQt5.fcitx5-qt
+      ];
+    };
+  };
 
   networking = {
     hostName = "nixos"; # Define your hostname.
