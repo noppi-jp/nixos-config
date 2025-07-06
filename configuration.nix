@@ -31,6 +31,7 @@
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     systemPackages = with pkgs; [
+      bitwarden-desktop
       emacs
       fastfetch
       file
