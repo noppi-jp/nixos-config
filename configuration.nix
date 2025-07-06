@@ -41,6 +41,7 @@
       hyprshot
       p7zip
       ripgrep
+      vscode.fhs
       wget
       wl-clipboard
       wezterm
