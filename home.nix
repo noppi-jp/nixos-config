@@ -79,6 +79,11 @@
       '';
     };
 
+    vscode = {
+      enable = true;
+      package = pkgs.vscode-fhs;
+    };
+
     waybar = {
       enable = true;
 

@@ -206,7 +206,7 @@
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.satoshi = {
       group = "satoshi";
-      extraGroups = [ "podman" "wheel" ];
+      extraGroups = [ "wheel" ];
       isNormalUser = true;
       hashedPassword = "$y$j9T$i8FidX3eyTOwJ8sRB9Zlv/$AUbG0y.3CcB2Mdj3zd3DQSo/Q7WnqG3y84MJeAqG0x4";
       openssh.authorizedKeys.keys = [
