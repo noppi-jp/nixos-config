@@ -81,7 +81,11 @@
 
     vscode = {
       enable = true;
-      package = pkgs.vscode-fhs;
+      profiles.default.extensions = with pkgs.vscode-extensions; [
+        ms-vscode-remote.remote-containers
+        asvetliakov.vscode-neovim
+        ms-ceintl.vscode-language-pack-ja
+      ];
     };
 
     waybar = {
@@ -283,8 +287,6 @@
       };
     };
   };
-
-  services.podman.enable = true;
 
   wayland.windowManager.hyprland = {
     enable = true;
