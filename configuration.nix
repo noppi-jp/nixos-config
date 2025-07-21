@@ -43,6 +43,7 @@
       hyprshot
       p7zip
       ripgrep
+      sbcl
       vscode
       wget
       wl-clipboard
