@@ -113,12 +113,7 @@
   #   enableSSHSupport = true;
   # };
   programs = {
-    bash.shellAliases = {
-      ls = "ls --color=auto -F";
-      grep = "grep --color=auto";
-      less = "less -i";
-      fastfetch = "fastfetch -l 'nixos_old'";
-    };
+    bash.shellAliases = import ./home/bash-aliases.nix;
 
     git = {
       enable = true;
@@ -141,21 +136,7 @@
       defaultEditor = true;
     };
 
-    tmux = {
-      enable = true;
-      terminal = "tmux-256color";
-      keyMode = "vi";
-      historyLimit = 10000;
-      escapeTime = 10;
-      clock24 = true;
-      extraConfig = ''
-        set-option -g status-right-length 60
-        set-option -g status-right "\"#{=30:pane_title}\" %Y/%m/%d (%a) %H:%M"
-
-        set-option -g focus-events on
-        set-option -sa terminal-features ",$TERM:RGB"
-      '';
-    };
+    tmux = import ./home/.config/tmux/tmux.nix;
 
     uwsm.enable = true;
 
@@ -166,10 +147,7 @@
     # Enable the OpenSSH daemon.
     openssh = {
       enable = true;
-      settings = {
-        PasswordAuthentication = false;
-        KbdInteractiveAuthentication = false;
-      };
+      settings = import ./etc/sshd/sshd.nix;
     };
 
     resolved.enable = true;
@@ -183,24 +161,13 @@
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # on your system were taken. It's perfectly fine and recommended to leave
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
 
-  systemd.network.networks."20-wired" = {
-    matchConfig = {
-      Name = "eth*";
-    };
-    linkConfig = {
-      RequiredForOnline = "routable";
-    };
-    networkConfig = {
-      DHCP = "ipv4";
-      IPv6AcceptRA = false;
-    };
-  };
+  systemd.network.networks."20-wired" = import ./etc/systemd/network/20-wired.nix;
 
   # Set your time zone.
   time.timeZone = "Asia/Tokyo";
