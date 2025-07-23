@@ -136,21 +136,7 @@
       defaultEditor = true;
     };
 
-    tmux = {
-      enable = true;
-      terminal = "tmux-256color";
-      keyMode = "vi";
-      historyLimit = 10000;
-      escapeTime = 10;
-      clock24 = true;
-      extraConfig = ''
-        set-option -g status-right-length 60
-        set-option -g status-right "\"#{=30:pane_title}\" %Y/%m/%d (%a) %H:%M"
-
-        set-option -g focus-events on
-        set-option -sa terminal-features ",$TERM:RGB"
-      '';
-    };
+    tmux = import ./home/.config/tmux/tmux.nix;
 
     uwsm.enable = true;
 
