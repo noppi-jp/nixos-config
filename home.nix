@@ -83,10 +83,7 @@
 
     wofi = {
       enable = true;
-      settings = {
-        show = "run";
-        run-show_all = false;
-      };
+      settings = import ./home/.config/wofi/config.nix;
     };
   };
 
