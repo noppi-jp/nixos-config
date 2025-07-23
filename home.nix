@@ -44,11 +44,7 @@
   programs = {
     bash = {
       enable = true;
-      profileExtra = ''
-        if uwsm check may-start -q; then
-            exec uwsm start hyprland-uwsm.desktop
-        fi
-      '';
+      profileExtra = builtins.readFile ./home/.bash_profile;
     };
 
     git = {
