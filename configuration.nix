@@ -167,18 +167,7 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
 
-  systemd.network.networks."20-wired" = {
-    matchConfig = {
-      Name = "eth*";
-    };
-    linkConfig = {
-      RequiredForOnline = "routable";
-    };
-    networkConfig = {
-      DHCP = "ipv4";
-      IPv6AcceptRA = false;
-    };
-  };
+  systemd.network.networks."20-wired" = import ./etc/systemd/network/20-wired.nix;
 
   # Set your time zone.
   time.timeZone = "Asia/Tokyo";
