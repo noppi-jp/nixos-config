@@ -95,9 +95,9 @@
         follow_mouse = 2;
     };
 
-    gestures = {
-        workspace_swipe = false;
-    };
+    #gestures = {
+    #    workspace_swipe = false;
+    #};
 
     device = {
         name = "epic-mouse-v1";
