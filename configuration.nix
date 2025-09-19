@@ -41,6 +41,7 @@
       file
       google-chrome
       hyprshot
+      openssl
       p7zip
       ripgrep
       sbcl
