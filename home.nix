@@ -49,9 +49,11 @@
 
     git = {
       enable = true;
-      userName = "Noppi";
-      userEmail = "noppi@noppi.jp";
-      extraConfig = {
+      settings = {
+        user = {
+          name = "Noppi";
+          email = "noppi@noppi.jp";
+        };
         push.default = "nothing";
       };
     };
