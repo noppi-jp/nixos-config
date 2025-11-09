@@ -114,7 +114,10 @@
   #   enableSSHSupport = true;
   # };
   programs = {
-    bash.shellAliases = import ./home/bash-aliases.nix;
+    bash = {
+      shellAliases = import ./home/bash-aliases.nix;
+      shellInit = builtins.readFile ./etc/bash-shellInit.sh;
+    };
 
     git = {
       enable = true;
