@@ -104,9 +104,9 @@
   :tag "builtin"
   :global-minor-mode t)
 
-;(leaf geiser-chez
-;  :ensure t
-;  :custom (geiser-chez-binary . "D:/tools/chez/bin/ta6nt/scheme.exe"))
+;; (leaf geiser-chez
+;;   :ensure t
+;;   :custom (geiser-chez-binary . "D:/tools/chez/bin/ta6nt/scheme.exe"))
 
 (leaf auto-complete
   :ensure t
@@ -117,11 +117,10 @@
   :hook ((slime-mode-hook . set-up-slime-ac)
          (slime-repl-mode-hook . set-up-slime-ac)))
 
-;(leaf ac-geiser
-;  :ensure t
-;  :hook ((geiser-mode-hook . ac-geiser-setup)
-;         (geiser-repl-mode-hook . ac-geiser-setup))
-;  :config (add-to-list 'ac-modes 'geiser-repl-mode))
+;; (leaf ac-geiser
+;;   :ensure t
+;;   (geiser-repl-mode-hook . ac-geiser-setup)
+;;   :config (add-to-list 'ac-modes 'geiser-repl-mode))
 
 (leaf font-setting
   :config
@@ -335,8 +334,8 @@
          ("M-(" . puni-wrap-round)
          ("M-s" . puni-splice)
          ("M-r" . puni-raise)
-         ("M-U" . puni-splice-killing-backward)
-         ("M-z" . puni-squeeze))
+         ;; ("M-z" . puni-squeeze)
+         ("M-U" . puni-splice-killing-backwar))
   :config
   (leaf elec-pair
     :doc "Automatic parenthesis pairing"
