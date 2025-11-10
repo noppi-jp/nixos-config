@@ -38,6 +38,7 @@
       docker-compose
       emacs
       fastfetch
+      feh
       file
       google-chrome
       hyprshot
@@ -45,11 +46,13 @@
       p7zip
       ripgrep
       sbcl
+      unzip
       vscode
       wget
       wl-clipboard
       wezterm
       wofi
+      zip
     ];
   };
 
