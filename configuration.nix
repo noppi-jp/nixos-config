@@ -139,6 +139,7 @@
 
     neovim = {
       enable = true;
+      defaultEditor = true;
     };
 
     tmux = import ./home/.config/tmux/tmux.nix;
@@ -159,7 +160,6 @@
 
     emacs = {
       enable = true;
-      defaultEditor = true;
     };
 
     # Configure keymap in X11
