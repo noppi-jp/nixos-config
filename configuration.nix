@@ -36,7 +36,6 @@
       bitwarden-desktop
       docker-buildx
       docker-compose
-      emacs
       fastfetch
       feh
       file
@@ -140,7 +139,6 @@
 
     neovim = {
       enable = true;
-      defaultEditor = true;
     };
 
     tmux = import ./home/.config/tmux/tmux.nix;
@@ -158,6 +156,11 @@
     };
 
     resolved.enable = true;
+
+    emacs = {
+      enable = true;
+      defaultEditor = true;
+    };
 
     # Configure keymap in X11
     xserver.xkb = {
