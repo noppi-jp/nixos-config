@@ -123,10 +123,11 @@
 ;;   :config (add-to-list 'ac-modes 'geiser-repl-mode))
 
 (leaf font-setting
-  :config
-  (create-fontset-from-ascii-font "HackGen-11:weight=normal" nil "HackGen")
-  (set-fontset-font "fontset-HackGen" 'unicode "HackGen-11:weight=normal" nil 'append)
-  (add-to-list 'default-frame-alist '(font . "fontset-HackGen")))
+  :hook
+  (server-after-make-frame-hook . (lambda ()
+                                    (create-fontset-from-ascii-font "HackGen-11:weight=normal" nil "HackGen")
+                                    (set-fontset-font "fontset-HackGen" 'unicode "HackGen-11:weight=normal" nil 'append)
+                                    (add-to-list 'default-frame-alist '(font . "fontset-HackGen")))))
 
 (leaf ace-jump-mode
   :defvar ace-jump-mode-move-keys
