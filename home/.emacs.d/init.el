@@ -283,13 +283,10 @@
 (leaf corfu
   :doc "COmpletion in Region FUnction"
   :ensure t
-  :global-minor-mode global-corfu-mode corfu-popupinfo-mode
-  :custom ((corfu-auto .t)
-           (corfu-auto-delay . 0)
-           (corfu-auto-prefix . 1)
-           (corfu-popupinfo-delay . nil)) ; manual
-  :bind ((corfu-map
-          ("C-s" . corfu-insert-separator))))
+  :custom (corfu-auto . t)
+  :global-minor-mode global-corfu-mode corfu-popupinfo-mode)
+  ;; :bind ((corfu-map
+  ;;         ("C-s" . corfu-insert-separator))))
 
 (leaf cape
   :doc "Completion At Point Extensions"
