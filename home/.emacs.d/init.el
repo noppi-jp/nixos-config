@@ -110,7 +110,15 @@
 
 (leaf auto-complete
   :ensure t
-  :global-minor-mode global-auto-complete-mode)
+  :hook ((lisp-mode-hook . (lambda ()
+                             (corfu-mode nil)
+                             (auto-complete-mode t)))
+         (slime-lisp-mode-hook . (lambda ()
+                                   (corfu-mode nil)
+                                   (auto-complete-mode t)))
+         (slime-repl-mode-hook . (lambda ()
+                                   (corfu-mode nil)
+                                   (auto-complete-mode t)))))
 
 (leaf ac-slime
   :ensure t
@@ -284,7 +292,10 @@
   :doc "COmpletion in Region FUnction"
   :ensure t
   :custom (corfu-auto . t)
-  :global-minor-mode global-corfu-mode corfu-popupinfo-mode)
+  :global-minor-mode global-corfu-mode corfu-popupinfo-mode
+  :custom ((tab-always-indent . 'complete)
+           (text-mode-ispell-word-completion . nil)
+           (read-extended-command-predicate . #'command-completion-default-include-p)))
   ;; :bind ((corfu-map
   ;;         ("C-s" . corfu-insert-separator))))
 
