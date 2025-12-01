@@ -108,22 +108,22 @@
 ;;   :ensure t
 ;;   :custom (geiser-chez-binary . "D:/tools/chez/bin/ta6nt/scheme.exe"))
 
-(leaf auto-complete
-  :ensure t
-  :hook ((lisp-mode-hook . (lambda ()
-                             (corfu-mode nil)
-                             (auto-complete-mode t)))
-         (slime-lisp-mode-hook . (lambda ()
-                                   (corfu-mode nil)
-                                   (auto-complete-mode t)))
-         (slime-repl-mode-hook . (lambda ()
-                                   (corfu-mode nil)
-                                   (auto-complete-mode t)))))
+;; (leaf auto-complete
+;;   :ensure t
+;;   :hook ((lisp-mode-hook . (lambda ()
+;;                              (corfu-mode nil)
+;;                              (auto-complete-mode t)))
+;;          (slime-lisp-mode-hook . (lambda ()
+;;                                    (corfu-mode nil)
+;;                                    (auto-complete-mode t)))
+;;          (slime-repl-mode-hook . (lambda ()
+;;                                    (corfu-mode nil)
+;;                                    (auto-complete-mode t)))))
 
-(leaf ac-slime
-  :ensure t
-  :hook ((slime-mode-hook . set-up-slime-ac)
-         (slime-repl-mode-hook . set-up-slime-ac)))
+;; (leaf ac-slime
+;;   :ensure t
+;;   :hook ((slime-mode-hook . set-up-slime-ac)
+;;          (slime-repl-mode-hook . set-up-slime-ac)))
 
 ;; (leaf ac-geiser
 ;;   :ensure t
@@ -292,7 +292,7 @@
   :doc "COmpletion in Region FUnction"
   :ensure t
   :custom (corfu-auto . t)
-  :global-minor-mode global-corfu-mode corfu-popupinfo-mode
+  :global-minor-mode global-corfu-mode
   :custom ((tab-always-indent . 'complete)
            (text-mode-ispell-word-completion . nil)
            (read-extended-command-predicate . #'command-completion-default-include-p)))
