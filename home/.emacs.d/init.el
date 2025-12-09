@@ -24,7 +24,8 @@
 (leaf cus-start
   :doc "define customization properties of builtins"
   :tag "builtin" "internal"
-  :bind ("C-h" . 'puni-backward-delete-char) ; シェルに合わせるため、C-hは後退に割り当てる
+  :bind (("C-h" . 'puni-backward-delete-char) ; シェルに合わせるため、C-hは後退に割り当てる
+         ([remap zap-to-char] . 'zap-up-to-char))
   :custom `((create-lockfiles . nil)
             (tab-width . 4)
             (frame-resize-pixelwise . t)
@@ -62,6 +63,11 @@
                       ;; 行番号を表示する
                       global-display-line-numbers-mode))
 
+(leaf char-encoding
+  :config
+  (set-language-environment "Japanese")
+  (prefer-coding-system 'utf-8))
+
 (leaf theme
   :config (load-theme 'tango-dark))
 
@@ -70,10 +76,10 @@
   :tag "builtin"
   :global-minor-mode global-auto-revert-mode)
 
-(leaf delsel
+(leaf delete-selection
   :doc "delete selection if you insert"
   :tag "builtin"
-  :global-minor-mode delete-selection-mode)
+  :global-minor-mode t)
 
 (leaf simple
   :doc "basic editing commands for Emacs"
@@ -107,28 +113,6 @@
 ;; (leaf geiser-chez
 ;;   :ensure t
 ;;   :custom (geiser-chez-binary . "D:/tools/chez/bin/ta6nt/scheme.exe"))
-
-;; (leaf auto-complete
-;;   :ensure t
-;;   :hook ((lisp-mode-hook . (lambda ()
-;;                              (corfu-mode nil)
-;;                              (auto-complete-mode t)))
-;;          (slime-lisp-mode-hook . (lambda ()
-;;                                    (corfu-mode nil)
-;;                                    (auto-complete-mode t)))
-;;          (slime-repl-mode-hook . (lambda ()
-;;                                    (corfu-mode nil)
-;;                                    (auto-complete-mode t)))))
-
-;; (leaf ac-slime
-;;   :ensure t
-;;   :hook ((slime-mode-hook . set-up-slime-ac)
-;;          (slime-repl-mode-hook . set-up-slime-ac)))
-
-;; (leaf ac-geiser
-;;   :ensure t
-;;   (geiser-repl-mode-hook . ac-geiser-setup)
-;;   :config (add-to-list 'ac-modes 'geiser-repl-mode))
 
 (leaf font-setting
   :hook
@@ -346,8 +330,8 @@
          ;; ("M-z" . puni-squeeze)
          ("M-U" . puni-splice-killing-backwar))
   :config
-  (leaf elec-pair
+  (leaf electric-pair
     :doc "Automatic parenthesis pairing"
-    :global-minor-mode electric-pair-mode))
+    :global-minor-mode t))
 
 (provide 'init)
