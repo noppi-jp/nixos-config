@@ -160,6 +160,7 @@
 
     emacs = {
       enable = true;
+      package = pkgs.emacs-pgtk;
     };
 
     # Configure keymap in X11
