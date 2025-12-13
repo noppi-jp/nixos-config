@@ -161,7 +161,7 @@
         extraSeatDefaults = ''
           greeter-hide-users=true
         '';
-        greeters.gtk.clock-format="%Y/%m/%d %H:%M （%a）";
+        greeters.gtk.clock-format="%Y/%m/%d（%a） %H:%M";
       };
 
       # Configure keymap in X11
