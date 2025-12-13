@@ -1,5 +1,6 @@
 (load-module :stumptray)
 (load-module :swm-gaps)
+(load-module :screenshot)
 
 (set-font "-*-unifont-medium-r-normal-*-*-*-*-*-*-*-*-*")
 ;; (run-shell-command "xrandr --output Virtual-1 --mode 1920x1080")
