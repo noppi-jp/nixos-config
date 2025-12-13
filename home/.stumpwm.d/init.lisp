@@ -1,3 +1,7 @@
+(require :swank)
+(swank:create-server :port 4004
+                     :dont-close t)
+
 (load-module :stumptray)
 (load-module :swm-gaps)
 (load-module :screenshot)
