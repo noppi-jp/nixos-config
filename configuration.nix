@@ -156,13 +156,7 @@
 
     xserver = {
       enable = true;
-      windowManager.stumpwm.enable = true;
-      displayManager.lightdm = {
-        extraSeatDefaults = ''
-          greeter-hide-users=true
-        '';
-        greeters.gtk.clock-format="%Y/%m/%d（%a） %H:%M";
-      };
+      displayManager.startx.enable = true;
 
       # Configure keymap in X11
       xkb = {
