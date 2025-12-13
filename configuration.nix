@@ -30,8 +30,6 @@
   environment = {
     localBinInPath = true;
 
-    # sessionVariables.NIXOS_OZONE_WL = "1";
-
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     systemPackages = with pkgs; [
@@ -42,7 +40,6 @@
       feh
       file
       google-chrome
-      # hyprshot
       openssl
       p7zip
       ripgrep
@@ -50,9 +47,8 @@
       unzip
       vscode
       wget
-      # wl-clipboard
       wezterm
-      # wofi
+      xsel
       zip
     ];
   };
@@ -92,7 +88,6 @@
       type = "fcitx5";
 
       fcitx5 = {
-        # waylandFrontend = true;
         addons = with pkgs; [
           fcitx5-skk
           fcitx5-gtk
@@ -135,11 +130,6 @@
       };
     };
 
-    # hyprland = {
-    #   enable = true;
-    #   withUWSM = true;
-    # };
-
     nano.enable = false;
 
     neovim = {
@@ -148,10 +138,6 @@
     };
 
     tmux = import ./home/.config/tmux/tmux.nix;
-
-    # uwsm.enable = true;
-
-    # waybar.enable = true;
   };
 
   services = {
@@ -171,7 +157,6 @@
     xserver = {
       enable = true;
       windowManager.stumpwm.enable = true;
-      # displayManager.startx.enable = true;
 
       # Configure keymap in X11
       xkb = {
