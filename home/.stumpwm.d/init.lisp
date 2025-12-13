@@ -3,8 +3,10 @@
 (load-module :screenshot)
 
 (set-font "-*-unifont-medium-r-normal-*-*-*-*-*-*-*-*-*")
-;; (run-shell-command "xrandr --output Virtual-1 --mode 1920x1080")
-;; (run-shell-command "fcitx5 &")
+
+(set-focus-color "red")
+(setf *normal-border-width* 3)
+
 (mode-line)
 (stumptray::stumptray)
 
