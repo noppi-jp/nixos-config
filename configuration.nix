@@ -30,7 +30,7 @@
   environment = {
     localBinInPath = true;
 
-    sessionVariables.NIXOS_OZONE_WL = "1";
+    # sessionVariables.NIXOS_OZONE_WL = "1";
 
     # List packages installed in system profile. To search, run:
     # $ nix search wget
@@ -42,7 +42,7 @@
       feh
       file
       google-chrome
-      hyprshot
+      # hyprshot
       openssl
       p7zip
       ripgrep
@@ -50,15 +50,16 @@
       unzip
       vscode
       wget
-      wl-clipboard
+      # wl-clipboard
       wezterm
-      wofi
+      # wofi
       zip
     ];
   };
 
   fonts = {
     enableDefaultPackages = true;
+    fontDir.enable = true;
 
     fontconfig = {
       defaultFonts = {
@@ -80,6 +81,8 @@
     ];
   };
 
+  hardware.graphics.enable32Bit = true;
+
   i18n = {
     # Select internationalisation properties.
     defaultLocale = "ja_JP.UTF-8";
@@ -89,7 +92,7 @@
       type = "fcitx5";
 
       fcitx5 = {
-        waylandFrontend = true;
+        # waylandFrontend = true;
         addons = with pkgs; [
           fcitx5-skk
           fcitx5-gtk
@@ -132,10 +135,10 @@
       };
     };
 
-    hyprland = {
-      enable = true;
-      withUWSM = true;
-    };
+    # hyprland = {
+    #   enable = true;
+    #   withUWSM = true;
+    # };
 
     nano.enable = false;
 
@@ -146,9 +149,9 @@
 
     tmux = import ./home/.config/tmux/tmux.nix;
 
-    uwsm.enable = true;
+    # uwsm.enable = true;
 
-    waybar.enable = true;
+    # waybar.enable = true;
   };
 
   services = {
@@ -162,13 +165,18 @@
 
     emacs = {
       enable = true;
-      package = pkgs.emacs-pgtk;
+      # package = pkgs.emacs-pgtk;
     };
 
-    # Configure keymap in X11
-    xserver.xkb = {
-      layout = "jp";
-      model = "jp106";
+    xserver = {
+      enable = true;
+      displayManager.startx.enable = true;
+
+      # Configure keymap in X11
+      xkb = {
+        layout = "jp";
+        model = "jp106";
+      };
     };
   };
 

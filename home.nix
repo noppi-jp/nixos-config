@@ -7,6 +7,8 @@
 
     # link the configuration file in current directory to the specified location in
     # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
+    file.".xinitrc".source = ./home/.xinitrc;
+    file."startstump".source = ./home/startstump;
     file.".emacs.d/init.el".source = ./home/.emacs.d/init.el;
     file.".local/bin/tailsu" = {
       source = ./home/.local/bin/tailsu;
@@ -37,18 +39,18 @@
       # feel free to add your own or remove some of them
     ];
 
-    pointerCursor = {
-      enable = true;
-      package = pkgs.xorg.xcursorthemes;
-      name = "whiteglass";
-    };
+    # pointerCursor = {
+    #   enable = true;
+    #   package = pkgs.xorg.xcursorthemes;
+    #   name = "whiteglass";
+    # };
   };
 
   # basic configuration of git, please change to your own
   programs = {
     bash = {
       enable = true;
-      profileExtra = builtins.readFile ./home/.bash_profile;
+      # profileExtra = builtins.readFile ./home/.bash_profile;
     };
 
     git = {
@@ -76,27 +78,27 @@
       ];
     };
 
-    waybar = {
-      enable = true;
-      settings.main = import ./home/.config/waybar/config.nix;
-      style = builtins.readFile ./home/.config/waybar/style.css;
-    };
+    # waybar = {
+    #   enable = true;
+    #   settings.main = import ./home/.config/waybar/config.nix;
+    #   style = builtins.readFile ./home/.config/waybar/style.css;
+    # };
 
     wezterm = {
       enable = true;
       extraConfig = builtins.readFile ./home/.config/wezterm/wezterm.lua;
     };
 
-    wofi = {
-      enable = true;
-      settings = import ./home/.config/wofi/config.nix;
-    };
+    # wofi = {
+    #   enable = true;
+    #   settings = import ./home/.config/wofi/config.nix;
+    # };
   };
 
-  wayland.windowManager.hyprland = {
-    enable = true;
-    settings = import ./home/.config/hyprland/hyprland.nix;
-  };
+  # wayland.windowManager.hyprland = {
+  #   enable = true;
+  #   settings = import ./home/.config/hyprland/hyprland.nix;
+  # };
 
   # This value determines the home Manager release that your
   # configuration is compmatible with. This helps avoid breakage
