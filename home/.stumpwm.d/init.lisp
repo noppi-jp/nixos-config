@@ -5,3 +5,6 @@
 ;; (run-shell-command "fcitx5 &")
 (mode-line)
 (stumptray::stumptray)
+
+(define-key *root-map* (kbd "C-c") "exec wezterm")
+(define-key *root-map* (kbd "C-e") "exec emacsclient -r")
