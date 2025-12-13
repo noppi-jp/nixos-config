@@ -140,6 +140,8 @@
     tmux = import ./home/.config/tmux/tmux.nix;
   };
 
+  security.polkit.enable = true;
+
   services = {
     # Enable the OpenSSH daemon.
     openssh = {
