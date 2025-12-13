@@ -11,6 +11,10 @@
 (set-focus-color "red")
 (setf *normal-border-width* 3)
 
+(setf *screen-mode-line-format* "[^B%n^b] %W^>%d            ")
+(setf *time-format-string-default* "%Y/%m/%d (%a) %H:%M:%S")
+(setf *time-modeline-string* "%Y/%m/%d (%a) %H:%M")
+
 (mode-line)
 (stumptray::stumptray)
 
