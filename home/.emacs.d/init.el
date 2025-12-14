@@ -312,6 +312,7 @@
 
 (leaf slime
   :ensure t
+  ;; :config (load (expand-file-name "~/quicklisp/slime-helper.el"))
   :custom (inferior-lisp-program . "sbcl"))
 
 (leaf puni
