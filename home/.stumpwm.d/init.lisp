@@ -6,6 +6,8 @@
 (load-module :swm-gaps)
 (load-module :screenshot)
 
+(setf *startup-message* nil)
+
 (set-font "-*-unifont-medium-r-normal-*-*-*-*-*-*-*-*-*")
 
 (set-focus-color "red")
