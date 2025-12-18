@@ -310,9 +310,8 @@
   :hook ((csv-mode-hook . rainbow-csv-mode)
          (tsv-mode-hook . rainbow-csv-mode)))
 
-(leaf slime
+(leaf sly
   :ensure t
-  ;; :config (load (expand-file-name "~/quicklisp/slime-helper.el"))
   :custom (inferior-lisp-program . "sbcl"))
 
 (leaf puni

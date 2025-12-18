@@ -1,5 +1,6 @@
-(require :swank)
-(swank:create-server :port 4004
+(require :asdf)
+(asdf:load-system :slynk)
+(slynk:create-server :port 4004
                      :dont-close t)
 
 (load-module :stumptray)
