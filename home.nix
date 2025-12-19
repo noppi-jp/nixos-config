@@ -11,6 +11,7 @@
     file."startstump".source = ./home/startstump;
     file.".emacs.d/init.el".source = ./home/.emacs.d/init.el;
     file.".stumpwm.d/init.lisp".source = ./home/.stumpwm.d/init.lisp;
+    file.".slynk.lisp".source = ./home/.slynk.lisp;
     file.".local/bin/tailsu" = {
       source = ./home/.local/bin/tailsu;
       executable = true;
