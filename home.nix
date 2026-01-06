@@ -8,10 +8,14 @@
     # link the configuration file in current directory to the specified location in
     # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
     file.".xinitrc".source = ./home/.xinitrc;
-    file."startstump".source = ./home/startstump;
+    file."startstump" = {
+      source = ./home/startstump;
+      executable = true;
+    };
     file.".emacs.d/init.el".source = ./home/.emacs.d/init.el;
     file.".stumpwm.d/init.lisp".source = ./home/.stumpwm.d/init.lisp;
     file.".slynk.lisp".source = ./home/.slynk.lisp;
+    file.".config/common-lisp/source-registry.conf.d/50-luser-lisp.conf".source = ./home/.config/common-lisp/source-registry.conf.d/50-luser-lisp.conf;
     file.".local/bin/tailsu" = {
       source = ./home/.local/bin/tailsu;
       executable = true;
