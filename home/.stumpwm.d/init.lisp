@@ -22,7 +22,6 @@
 (stumptray::stumptray)
 
 (define-key *root-map* (kbd "C-c") "exec wezterm")
-(define-key *root-map* (kbd "C-e") "exec emacsclient -r")
 
 (setf swm-gaps:*outer-gaps-size* 5)
 (swm-gaps:toggle-gaps-on)
