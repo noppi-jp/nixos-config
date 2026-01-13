@@ -36,6 +36,7 @@
       bitwarden-desktop
       docker-buildx
       docker-compose
+      emacs
       fastfetch
       feh
       file
@@ -168,11 +169,6 @@
     };
 
     resolved.enable = true;
-
-    emacs = {
-      enable = true;
-      # package = pkgs.emacs-pgtk;
-    };
 
     xserver = {
       enable = true;

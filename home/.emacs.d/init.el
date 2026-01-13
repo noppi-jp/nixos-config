@@ -110,11 +110,10 @@
 ;;   :custom (geiser-chez-binary . "D:/tools/chez/bin/ta6nt/scheme.exe"))
 
 (leaf font-setting
-  :hook
-  (server-after-make-frame-hook . (lambda ()
-                                    (create-fontset-from-ascii-font "HackGen-11:weight=normal" nil "HackGen")
-                                    (set-fontset-font "fontset-HackGen" 'unicode "HackGen-11:weight=normal" nil 'append)
-                                    (add-to-list 'default-frame-alist '(font . "fontset-HackGen")))))
+  :config (progn
+            (create-fontset-from-ascii-font "HackGen-11:weight=normal" nil "HackGen")
+            (set-fontset-font "fontset-HackGen" 'unicode "HackGen-11:weight=normal" nil 'append)
+            (add-to-list 'default-frame-alist '(font . "fontset-HackGen"))))
 
 (leaf ace-jump-mode
   :defvar ace-jump-mode-move-keys
@@ -333,7 +332,7 @@
          ("M-s" . puni-splice)
          ("M-r" . puni-raise)
          ;; ("M-z" . puni-squeeze)
-         ("M-U" . puni-splice-killing-backwar))
+         ("M-U" . puni-splice-killing-backward))
   :config
   (leaf electric-pair
     :doc "Automatic parenthesis pairing"
