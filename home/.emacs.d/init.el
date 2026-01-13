@@ -332,7 +332,7 @@
          ("M-s" . puni-splice)
          ("M-r" . puni-raise)
          ;; ("M-z" . puni-squeeze)
-         ("M-U" . puni-splice-killing-backwar))
+         ("M-U" . puni-splice-killing-backward))
   :config
   (leaf electric-pair
     :doc "Automatic parenthesis pairing"
