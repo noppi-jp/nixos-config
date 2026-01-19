@@ -84,10 +84,7 @@
 
   xsession = {
     enable = true;
-    profileExtra = ''
-      xrandr --output Virtual-1 --mode 1920x1080
-      fcitx5 &
-    '';
+    profileExtra = "fcitx5 &";
   };
 
   # This value determines the home Manager release that your
