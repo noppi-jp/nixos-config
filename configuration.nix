@@ -175,7 +175,7 @@
       displayManager = {
         lightdm = {
           extraSeatDefaults = "greeter-hide-users = true";
-          greeters.gtk.clock-format = "%Y/%m/%d %H:%M";
+          greeters.gtk.clock-format = "%Y/%m/%d（%a）%H:%M";
         };
         session = [
           { manage = "window";
