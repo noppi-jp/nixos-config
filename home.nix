@@ -7,7 +7,6 @@
 
     # link the configuration file in current directory to the specified location in
     # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
-    file.".xinitrc".source = ./home/.xinitrc;
     file."startstump" = {
       source = ./home/startstump;
       executable = true;
@@ -81,6 +80,11 @@
       enable = true;
       extraConfig = builtins.readFile ./home/.config/wezterm/wezterm.lua;
     };
+  };
+
+  xsession = {
+    enable = true;
+    profileExtra = "fcitx5 &";
   };
 
   # This value determines the home Manager release that your
