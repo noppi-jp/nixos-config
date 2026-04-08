@@ -154,6 +154,8 @@
     neovim = {
       enable = true;
       defaultEditor = true;
+      withRuby = false;
+      withPython3 = false;
     };
 
     tmux = import ./home/.config/tmux/tmux.nix;
