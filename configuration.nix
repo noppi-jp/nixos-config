@@ -124,8 +124,14 @@
     };
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    # Allow unfree packages
+    allowUnfree = true;
+
+    permittedInsecurePackages = [
+      "electron-39.8.10"
+    ];
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
