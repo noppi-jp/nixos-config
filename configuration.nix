@@ -182,7 +182,13 @@
 
       xserver = {
           enable = true;
-          windowManager.awesome.enable = true;
+#          windowManager.awesome.enable = true;
+          windowManager.awesome = {
+              enable = true;
+              package = pkgs.awesome.override {
+                  gtk3Support = true;
+              };
+          };
           displayManager = {
               setupCommands = "/run/current-system/sw/bin/xrandr --output Virtual-1 --mode 1920x1080";
               lightdm = {
