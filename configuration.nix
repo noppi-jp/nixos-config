@@ -170,39 +170,40 @@
   security.polkit.enable = true;
 
   services = {
-    # Enable the OpenSSH daemon.
-    openssh = {
-      enable = true;
-      settings = import ./etc/sshd/sshd.nix;
-    };
+      displayManager.defaultSession = "none+awesome";
 
-    resolved.enable = true;
+      # Enable the OpenSSH daemon.
+      openssh = {
+          enable = true;
+          settings = import ./etc/sshd/sshd.nix;
+      };
 
-    xserver = {
-        enable = true;
-        windowManager.awesome.enable = true;
-        displayManager = {
-            setupCommands = "/run/current-system/sw/bin/xrandr --output Virtual-1 --mode 1920x1080";
-            lightdm = {
-                enable = true;
-                extraSeatDefaults = "greeter-hide-users = true";
-                greeters.gtk.clock-format = "%Y/%m/%d（%a）%H:%M";
-            };
-            defaultSession = "none+awesome";
+      resolved.enable = true;
+
+      xserver = {
+          enable = true;
+          windowManager.awesome.enable = true;
+          displayManager = {
+              setupCommands = "/run/current-system/sw/bin/xrandr --output Virtual-1 --mode 1920x1080";
+              lightdm = {
+                  enable = true;
+                  extraSeatDefaults = "greeter-hide-users = true";
+                  greeters.gtk.clock-format = "%Y/%m/%d（%a）%H:%M";
+              };
 #        session = [
 #          { manage = "window";
 #            name = "stumpwm";
 #            start = "/home/satoshi/startstump";
 #          }
 #];
-        };
+          };
 
-      # Configure keymap in X11
-      xkb = {
-        layout = "jp";
-        model = "jp106";
+          # Configure keymap in X11
+          xkb = {
+              layout = "jp";
+              model = "jp106";
+          };
       };
-    };
   };
 
   # This value determines the NixOS release from which the default
