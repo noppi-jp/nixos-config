@@ -62,13 +62,13 @@
       defaultFonts = {
         serif = [ "Noto Serif CJK JP" ];
         sansSerif = [ "Noto Sans CJK JP" ];
-        monospace = [ "HackGen" ];
+        monospace = [ "HackGen Console NF" ];
       };
     };
 
     packages = with pkgs; [
       font-awesome
-      hackgen-font
+      hackgen-nf-font
       nerd-fonts.symbols-only
       noto-fonts
       noto-fonts-cjk-sans
@@ -170,36 +170,46 @@
   security.polkit.enable = true;
 
   services = {
-    # Enable the OpenSSH daemon.
-    openssh = {
-      enable = true;
-      settings = import ./etc/sshd/sshd.nix;
-    };
+      displayManager.defaultSession = "none+awesome";
 
-    resolved.enable = true;
-
-    xserver = {
-      enable = true;
-      displayManager = {
-        setupCommands = "/run/current-system/sw/bin/xrandr --output Virtual-1 --mode 1920x1080";
-        lightdm = {
-          extraSeatDefaults = "greeter-hide-users = true";
-          greeters.gtk.clock-format = "%Y/%m/%d（%a）%H:%M";
-        };
-        session = [
-          { manage = "window";
-            name = "stumpwm";
-            start = "/home/satoshi/startstump";
-          }
-        ];
+      # Enable the OpenSSH daemon.
+      openssh = {
+          enable = true;
+          settings = import ./etc/sshd/sshd.nix;
       };
 
-      # Configure keymap in X11
-      xkb = {
-        layout = "jp";
-        model = "jp106";
+      resolved.enable = true;
+
+      xserver = {
+          enable = true;
+#          windowManager.awesome.enable = true;
+          windowManager.awesome = {
+              enable = true;
+              package = pkgs.awesome.override {
+                  gtk3Support = true;
+              };
+          };
+          displayManager = {
+              setupCommands = "/run/current-system/sw/bin/xrandr --output Virtual-1 --mode 1920x1080";
+              lightdm = {
+                  enable = true;
+                  extraSeatDefaults = "greeter-hide-users = true";
+                  greeters.gtk.clock-format = "%Y/%m/%d（%a）%H:%M";
+              };
+#        session = [
+#          { manage = "window";
+#            name = "stumpwm";
+#            start = "/home/satoshi/startstump";
+#          }
+#];
+          };
+
+          # Configure keymap in X11
+          xkb = {
+              layout = "jp";
+              model = "jp106";
+          };
       };
-    };
   };
 
   # This value determines the NixOS release from which the default
