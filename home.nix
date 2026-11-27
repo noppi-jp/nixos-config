@@ -15,7 +15,12 @@
     file.".stumpwm.d/init.lisp".source = ./home/.stumpwm.d/init.lisp;
     file.".slynk.lisp".source = ./home/.slynk.lisp;
     file.".config/common-lisp/source-registry.conf.d/50-luser-lisp.conf".source = ./home/.config/common-lisp/source-registry.conf.d/50-luser-lisp.conf;
-    file.".config/awesome/rc.lua".source = ./home/.config/awesome/rc.lua;
+    # file.".config/awesome/rc.lua".source = ./home/.config/awesome/rc.lua;
+    file.".config/awesome" = {
+        force = true;
+        source = ./home/.config/awesome;
+        recursive = true;
+    };
     file.".local/bin/tailsu" = {
       source = ./home/.local/bin/tailsu;
       executable = true;
