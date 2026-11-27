@@ -312,7 +312,12 @@
 
 (leaf sly
   :ensure t
-  :custom (inferior-lisp-program . "sbcl"))
+  ;; :custom (inferior-lisp-program . "sbcl"))
+  :config (setq sly-lisp-implementations
+                '((sbcl
+                   ("nix" "run"
+                    "github:NixOS/nixpkgs/nixos-26.05#sbcl"
+                    "--")))))
 
 (leaf puni
   :doc "Parentheses Universalistic"
