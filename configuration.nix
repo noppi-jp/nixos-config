@@ -62,13 +62,13 @@
       defaultFonts = {
         serif = [ "Noto Serif CJK JP" ];
         sansSerif = [ "Noto Sans CJK JP" ];
-        monospace = [ "HackGen" ];
+        monospace = [ "HackGen Console NF" ];
       };
     };
 
     packages = with pkgs; [
       font-awesome
-      hackgen-font
+      hackgen-nf-font
       nerd-fonts.symbols-only
       noto-fonts
       noto-fonts-cjk-sans
