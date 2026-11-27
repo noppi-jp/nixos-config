@@ -179,20 +179,23 @@
     resolved.enable = true;
 
     xserver = {
-      enable = true;
-      displayManager = {
-        setupCommands = "/run/current-system/sw/bin/xrandr --output Virtual-1 --mode 1920x1080";
-        lightdm = {
-          extraSeatDefaults = "greeter-hide-users = true";
-          greeters.gtk.clock-format = "%Y/%m/%d（%a）%H:%M";
+        enable = true;
+        windowManager.awesome.enable = true;
+        displayManager = {
+            setupCommands = "/run/current-system/sw/bin/xrandr --output Virtual-1 --mode 1920x1080";
+            lightdm = {
+                enable = true;
+                extraSeatDefaults = "greeter-hide-users = true";
+                greeters.gtk.clock-format = "%Y/%m/%d（%a）%H:%M";
+            };
+            defaultSession = "none+awesome";
+#        session = [
+#          { manage = "window";
+#            name = "stumpwm";
+#            start = "/home/satoshi/startstump";
+#          }
+#];
         };
-        session = [
-          { manage = "window";
-            name = "stumpwm";
-            start = "/home/satoshi/startstump";
-          }
-        ];
-      };
 
       # Configure keymap in X11
       xkb = {
