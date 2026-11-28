@@ -148,7 +148,6 @@
 
     git = {
       enable = true;
-      lfs.enable = true;
 
       config = {
         core.quotePath = false;
@@ -182,7 +181,6 @@
 
       xserver = {
           enable = true;
-#          windowManager.awesome.enable = true;
           windowManager.awesome = {
               enable = true;
               package = pkgs.awesome.override {
@@ -196,12 +194,6 @@
                   extraSeatDefaults = "greeter-hide-users = true";
                   greeters.gtk.clock-format = "%Y/%m/%d（%a）%H:%M";
               };
-#        session = [
-#          { manage = "window";
-#            name = "stumpwm";
-#            start = "/home/satoshi/startstump";
-#          }
-#];
           };
 
           # Configure keymap in X11

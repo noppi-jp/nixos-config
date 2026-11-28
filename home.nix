@@ -7,23 +7,13 @@
 
     # link the configuration file in current directory to the specified location in
     # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
-    file."startstump" = {
-      source = ./home/startstump;
-      executable = true;
-    };
     file.".emacs.d/init.el".source = ./home/.emacs.d/init.el;
-    file.".stumpwm.d/init.lisp".source = ./home/.stumpwm.d/init.lisp;
     file.".slynk.lisp".source = ./home/.slynk.lisp;
     file.".config/common-lisp/source-registry.conf.d/50-luser-lisp.conf".source = ./home/.config/common-lisp/source-registry.conf.d/50-luser-lisp.conf;
-    # file.".config/awesome/rc.lua".source = ./home/.config/awesome/rc.lua;
     file.".config/awesome" = {
         force = true;
         source = ./home/.config/awesome;
         recursive = true;
-    };
-    file.".local/bin/tailsu" = {
-      source = ./home/.local/bin/tailsu;
-      executable = true;
     };
 
     # link all files in `./scripts` to `~/.config/i3/scripts`
@@ -61,10 +51,6 @@
       enable = true;
       signing.format = null;
       settings = {
-        user = {
-          name = "Noppi";
-          email = "noppi@noppi.jp";
-        };
         push.default = "nothing";
       };
     };
@@ -72,16 +58,14 @@
     jujutsu = {
         enable = true;
         settings = {
-            user = {
-                name = "Noppi";
-                email = "noppi@noppi.jp";
-            };
             ui = {
                 editor = "nvim";
                 merge-editor = "vscode";
             };
             revsets.bookmark-advance-to = "closest_pushable(@)";
             revset-aliases."closest_pushable(to)" = "heads(::to & mutable() & ~description(exact:\"\") & (~empty() | merges()))";
+            template-aliases."format_short_signature(signature)" = "signature.name()";
+            git.colocate = false;
         };
     };
 
